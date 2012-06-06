@@ -1,0 +1,17 @@
+{
+    "name": "ddpclient",
+    "version": "0.0.1",
+    "description": "Node.js module to connect to servers using DDP protocol.",
+    "preferGlobal": "false",
+    "main": "index.js",
+    "author": "Alan Sikora",
+    "keywords": ["ddp", "meteor", "protocol"],
+    "repository" : {
+        "type": "git",
+        "url": "https://github.com/alansikora/ddpclient.git"
+    },
+    "dependencies": {
+        "ws": "0.4.16"
+    },
+    "engines": { "node": "*" }
+}
