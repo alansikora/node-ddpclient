@@ -1,4 +1,4 @@
-DDPClient = require("../index.js")
+DDPClient = require("../index.js") # Change this to require("ddpclient")
 
 ddpclient = new DDPClient("localhost", 3000)
 
