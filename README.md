@@ -3,6 +3,8 @@ ddpclient
 
 Node.js module to connect to servers using DDP protocol.
 
+This was based on the existing Python client: https://github.com/meteor/meteor/tree/master/examples/unfinished/python-ddp-client
+
 installation
 ============
 
