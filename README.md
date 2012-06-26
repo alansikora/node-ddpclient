@@ -1,5 +1,5 @@
-ddpclient
-=========
+Node.js DDP Client
+==================
 
 Node.js module to connect to servers using DDP protocol.
 
