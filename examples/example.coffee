@@ -14,9 +14,17 @@ ddpclient.on "connect", (data) ->
     console.log "result-test received!", data
   
   ddpclient.call "test", ["param1", "param2"]
+  
+  ddpclient.on "msg-data-lists", (data) ->
+    console.log "result-lists received!", data
+  
+  ddpclient.subscribe "lists"
     
 ddpclient.on "msg-data", (data) ->
   console.log "data received!", data
   
 ddpclient.on "msg-result", (data) ->
   console.log "result received!", data
+  
+ddpclient.on "msg-nosub", (data) ->
+  console.log "nosub received!", data

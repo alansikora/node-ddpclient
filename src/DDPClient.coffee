@@ -44,25 +44,34 @@ class DDPClient extends EventEmitter
       
     if object.msg == "data"
       @.emit "msg-data", object
-    
+      @.emit "msg-data-#{@identifiers[object.id]}", object
+      
     if object.msg == "result"
       @.emit "msg-result", object
       @.emit "msg-result-#{@identifiers[object.id]}", object
+      
+    if object.msg == "nosub"
+      @.emit "msg-nosub", object
+      
+    if object.msg == "error"
+      @.emit "msg-error", object
     
-  call: (identifier, name, params) =>
-    if name instanceof Array
-      params = name
-      name = identifier
+  call: (identifier, method, params) =>
+    method = identifier if method is undefined
+    if method instanceof Array
+      params = method
+      method = identifier
     
     id = @register_identifier identifier
     
     @send
       "msg": "method"
-      "method": name
-      "params": params
       "id": id
+      "method": method
+      "params": params
       
   subscribe: (identifier, name, params) =>
+    name = identifier if name is undefined    
     if name instanceof Array
       params = name
       name = identifier
@@ -71,8 +80,8 @@ class DDPClient extends EventEmitter
     
     @send
       "msg": "sub"
+      "id": id
       "name": name
       "params": params
-      "id": id
     
 module.exports = DDPClient
