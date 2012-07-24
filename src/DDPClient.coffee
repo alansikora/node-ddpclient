@@ -7,8 +7,13 @@ class DDPClient extends EventEmitter
   socket_url: null
   socket: null
   
-  constructor: (hostname, port, url = "websocket") ->
-    @socket_url = "ws://#{hostname}:#{port}/#{url}"
+  constructor: (dict) ->
+    hostname = dict.hostname
+    port = dict.port
+    url = dict.url || "websocket"
+    protocol = if dict.use_ssl then "wss" else "ws"
+    
+    @socket_url = "#{protocol}://#{hostname}:#{port}/#{url}"
     
   next_id: =>
     (++@current_id).toString()
