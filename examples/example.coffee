@@ -1,5 +1,10 @@
 DDPClient = require("../index.js") # Change this to require("ddpclient")
 
+# You should use an object literal for now on:
+# - hostname (required)
+# - port (optional - defaults to null)
+# - url (optional - defaults to "websocket")
+# - use_ssl (optional - defaults to false)
 ddpclient = new DDPClient({hostname: "ddpclient-tester.meteor.com", use_ssl: true})
 
 ddpclient.connect()
