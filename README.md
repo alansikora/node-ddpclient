@@ -17,6 +17,8 @@ example
 
 There is a dead simple example on using the class, take a look at "examples/example.coffee" or "examples/example.js"
 
+To test your client, you may use the deployed app (http://ddpclient-tester.meteor.com), as used on the example.
+
 development
 ===========
 
