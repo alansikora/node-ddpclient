@@ -1,6 +1,6 @@
 DDPClient = require("../index.js") # Change this to require("ddpclient")
 
-ddpclient = new DDPClient({hostname: "localhost", port: 3000})
+ddpclient = new DDPClient({hostname: "ddpclient-tester.meteor.com", use_ssl: true})
 
 ddpclient.connect()
 
