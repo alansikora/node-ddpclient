@@ -30,6 +30,8 @@ class DDPClient extends EventEmitter
     
     @socket.on "message", @received
     
+    @socket.on "error", @handle_error
+
     @socket.on "open", @opened
     
   opened: =>
@@ -62,6 +64,9 @@ class DDPClient extends EventEmitter
       
     if object.msg == "error"
       @.emit "msg-error", object
+
+  handle_error: (error) =>
+    @.emit "connect-error", error
     
   call: (identifier, method, params) =>
     method = identifier if method is undefined
