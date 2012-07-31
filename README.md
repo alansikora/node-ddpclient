@@ -1,4 +1,4 @@
-Node.js DDP Client v0.6.1
+Node.js DDP Client v0.6.2
 =========================
 
 Node.js module to connect to servers using DDP protocol.
